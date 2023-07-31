@@ -26,7 +26,7 @@ def my_data(list):
     X_total = np.array([])
     for no in range(len(list)):
         X=pd.read_csv(list[no])
-        X=X.fillna(0)
+        X=X.dropna()
         X=np.array(X)
         X_total=np.append(X_total,X)
         X_total=X_total.reshape(-1,1) 
