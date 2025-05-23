@@ -16,6 +16,7 @@ def MLP_CLS(patient_num, data_dir, save_dir):
     kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
     for fold, (train_idx, test_idx) in enumerate(kf.split(patient_num)):
+        # patient independent classification
         print(f"MLP Training fold {fold + 1}/{5}...")
         train_patients, test_patients = patient_num[train_idx], patient_num[test_idx]
         train_path = [os.path.join(data_dir, name) for name in os.listdir(data_dir) if int(name.replace('.csv','').split("_")[1]) in train_patients]
