@@ -21,13 +21,13 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument(
     "--data_dir",
-    default="/mnt/files/seizures/features_patientbased",
+    default="path to your files",
     help="Directory containing data of features",
 )
 
 parser.add_argument(
     "--save_dir", 
-    default=os.path.join("results", str('2025-05-22')), 
+    default=os.path.join("results", str(today)), 
     help="Directory for saving the result"
 )
 
@@ -48,9 +48,9 @@ mlp_dir = os.path.join(args.save_dir, "MLP")
 rf_dir = os.path.join(args.save_dir, "RF")
 xgboost_dir = os.path.join(args.save_dir, "XGBoost")
 
-## MLP classification and evaluation
-# MLP_CLS(patient_number, args.data_dir, mlp_dir)
-# Eval_folds(mlp_dir, classifier_name="MLP")
+# MLP classification and evaluation
+MLP_CLS(patient_number, args.data_dir, mlp_dir)
+Eval_folds(mlp_dir, classifier_name="MLP")
 
 # Random Forest classification and evaluation
 RF_CLS(patient_number, args.data_dir, rf_dir)
