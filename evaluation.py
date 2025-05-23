@@ -18,6 +18,7 @@ def Eval_folds(save_dir, classifier_name):
         pred_prob = df_test['pred-lim2'].values
         pred= df_test['prediction'].values
 
+        # confusion matrix
         cm = confusion_matrix(target, pred)
         TN = cm[0,0]
         FN = cm[1,0]
@@ -52,7 +53,7 @@ def Eval_folds(save_dir, classifier_name):
             plt.savefig(f'{save_dir}/feature_importance_fold{i}.png', bbox_inches = 'tight')
             plt.close()
 
-
+        # save the result in a csv file
         df = pd.DataFrame({
         'TN': [TN],
         'FP': [FP],
