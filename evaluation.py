@@ -38,9 +38,9 @@ def Eval_folds(save_dir, classifier_name):
         auc_value = metrics.auc(fpr, tpr)
         print('auc value:', round(auc_value*100,3))
 
+        #check feature importance of the tree-based classifiers
         if classifier_name == 'RF' or classifier_name == 'XGBoost':
             loaded_model = pickle.load(open(f'{save_dir}/model{i}.sav', 'rb'))
-            #check the importance of features in classification
             df_features_name=['muNN','SDNN','RMSSD','TRindex','kurtosis','skewness','ApEn','LF/HF ratio','VLF power','LF  power','HF power','SD1','SD2','CSI','CVI','SD ratio']  
             importances = loaded_model.feature_importances_
             #plot feature importance
