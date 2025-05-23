@@ -1,4 +1,6 @@
-# random-forest-and-XGboost-classification
-This code help you to use random forest , XGboost and XGBoost Random Forest classifiers to classify based on a multiple files consisting data and labels.
- 
-results indicates that random forest has the highest accuracy.
+# Classification using XGBoost, Random Forest and Multilayer peceptron
+Seizure classification is done using XGBoost, Random Forest(RF) and Multilayer peceptron (MP), for the purpose of comparison.
+
+The classification is doen patient independent to overcome overfeating.
+
+The result of each classifier is evaluated and saved.
